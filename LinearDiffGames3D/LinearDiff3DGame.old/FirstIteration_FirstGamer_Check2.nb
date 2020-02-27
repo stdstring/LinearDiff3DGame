@@ -1,0 +1,593 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     18337,        475]*)
+(*NotebookOutlinePosition[     18981,        497]*)
+(*  CellTagsIndexPosition[     18937,        493]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(length[x_, y_, 
+        z_] = \@\(x\^2 + y\^2 + z\^2\)\[IndentingNewLine]\), "\
+\[IndentingNewLine]", 
+    \(n1 = {0, 0, 1}\), "\[IndentingNewLine]", 
+    \(n2 = {0, 1, 0}\), "\[IndentingNewLine]", 
+    \(n3 = {\(-1\), 0, 0}\), "\[IndentingNewLine]", 
+    \(n4 = {0, \(-1\), 0}\), "\[IndentingNewLine]", 
+    \(n5 = {1, 0, 0}\), "\[IndentingNewLine]", 
+    \(n6 = {0, 0, \(-1\)}\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(pi1 = {0.99037, 0.01246, 0.13786}\), "\[IndentingNewLine]", 
+    \(pi2 = {\(-0.08453\), 0.09932, 
+        0.99146}\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\
+\:0430\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\
+\:0437\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\
+\:0430\:043b\:0435\:0439 n1...n6 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\
+\:043b\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\
+\:043e\:043c pi1 :\>"]\), "\[IndentingNewLine]", 
+    \(n1 . pi1\), "\[IndentingNewLine]", 
+    \(n2 . pi1\), "\[IndentingNewLine]", 
+    \(n3 . pi1\), "\[IndentingNewLine]", 
+    \(n4 . pi1\), "\[IndentingNewLine]", 
+    \(n5 . pi1\), "\[IndentingNewLine]", 
+    \(n6 . pi1\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n7 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-3) :\>"]\), "\[IndentingNewLine]", 
+    \(nl7 = Cross[Cross[n1, n3], pi1]\), "\[IndentingNewLine]", 
+    \(nl7length = length[\(-0.13786\), 0, 0.99037]\), "\[IndentingNewLine]", 
+    \(n7 = nl7/nl7length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n8 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-4) :\>"]\), "\[IndentingNewLine]", 
+    \(nl8 = Cross[Cross[n1, n4], pi1]\), "\[IndentingNewLine]", 
+    \(nl8length = length[0, \(-0.13786\), 0.01246]\), "\[IndentingNewLine]", 
+    \(n8 = nl8/nl8length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n9 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 5-4) :\>"]\), "\[IndentingNewLine]", 
+    \(nl9 = Cross[Cross[n5, n4], pi1]\), "\[IndentingNewLine]", 
+    \(nl9length = length[0.01246, \(-0.99037\), 0]\), "\[IndentingNewLine]", 
+    \(n9 = nl9/nl9length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n10 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 5-6) :\>"]\), "\[IndentingNewLine]", 
+    \(nl10 = Cross[Cross[n5, n6], pi1]\), "\[IndentingNewLine]", 
+    \(nl10length = 
+      length[0.13786, 0, \(-0.99037\)]\), "\[IndentingNewLine]", 
+    \(n10 = nl10/nl10length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n11 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-6) :\>"]\), "\[IndentingNewLine]", 
+    \(nl11 = Cross[Cross[n2, n6], pi1]\), "\[IndentingNewLine]", 
+    \(nl11length = 
+      length[0, 0.13786, \(-0.01246\)]\), "\[IndentingNewLine]", 
+    \(n11 = nl11/nl11length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n12 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-3) :\>"]\), "\[IndentingNewLine]", 
+    \(nl12 = Cross[Cross[n2, n3], pi1]\), "\[IndentingNewLine]", 
+    \(nl12length = 
+      length[\(-0.01246\), 0.99037, 0]\), "\[IndentingNewLine]", 
+    \(n12 = nl12/nl12length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\
+\:0430\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\
+\:0437\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\
+\:0430\:043b\:0435\:0439 n1...n12 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\
+\:043b\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\
+\:043e\:043c pi2 :\>"]\), "\[IndentingNewLine]", 
+    \(n1 . pi2\), "\[IndentingNewLine]", 
+    \(n2 . pi2\), "\[IndentingNewLine]", 
+    \(n3 . pi2\), "\[IndentingNewLine]", 
+    \(n4 . pi2\), "\[IndentingNewLine]", 
+    \(n5 . pi2\), "\[IndentingNewLine]", 
+    \(n6 . pi2\), "\[IndentingNewLine]", 
+    \(n7 . pi2\), "\[IndentingNewLine]", 
+    \(n8 . pi2\), "\[IndentingNewLine]", 
+    \(n9 . pi2\), "\[IndentingNewLine]", 
+    \(n10 . pi2\), "\[IndentingNewLine]", 
+    \(n11 . pi2\), "\[IndentingNewLine]", 
+    \(n12 . pi2\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n13 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-8) :\>"]\), "\[IndentingNewLine]", 
+    \(nl13 = Cross[Cross[n1, n8], pi2]\), "\[IndentingNewLine]", 
+    \(nl13length = 
+      length[0, \(-0.9874351111430598\), 
+        0.09891680475130485]\), "\[IndentingNewLine]", 
+    \(n13 = nl13/nl13length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n14 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-5) :\>"]\), "\[IndentingNewLine]", 
+    \(nl14 = Cross[Cross[n1, n5], pi2]\), "\[IndentingNewLine]", 
+    \(nl14length = length[0.99146, 0, 0.08453]\), "\[IndentingNewLine]", 
+    \(n14 = nl14/nl14length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n15 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-5) :\>"]\), "\[IndentingNewLine]", 
+    \(nl15 = Cross[Cross[n2, n5], pi2]\), "\[IndentingNewLine]", 
+    \(nl15length = length[0.09932, 0.08453, 0]\), "\[IndentingNewLine]", 
+    \(n15 = nl15/nl15length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n16 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-10) :\>"]\), "\[IndentingNewLine]", 
+    \(nl16 = Cross[Cross[n2, n10], pi2]\), "\[IndentingNewLine]", 
+    \(nl16length = 
+      length[0.013693363609674079, 
+        0.993645976699467, \(-0.09837151108452717\)]\), \
+"\[IndentingNewLine]", 
+    \(n16 = nl16/nl16length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n17 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 11-10) :\>"]\), "\[IndentingNewLine]", 
+    \(nl17 = Cross[Cross[n11, n10], pi2]\), "\[IndentingNewLine]", 
+    \(nl17length = 
+      length[0.0013333371451823106, 
+        0.9896122137444702, \(-0.09902121929298056\)]\), \
+"\[IndentingNewLine]", 
+    \(n17 = nl17/nl17length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n18 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 11-6) :\>"]\), "\[IndentingNewLine]", 
+    \(nl18 = Cross[Cross[n11, n6], pi2]\), "\[IndentingNewLine]", 
+    \(nl18length = 
+      length[0, 
+        0.9874351111430598, \(-0.09891680475130485\)]\), \
+"\[IndentingNewLine]", 
+    \(n18 = nl18/nl18length\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \
+\:043f\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n19 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 3-6) :\>"]\), "\[IndentingNewLine]", 
+    \(nl19 = Cross[Cross[n3, n6], pi2]\), "\[IndentingNewLine]", 
+    \(nl19length = 
+      length[\(-0.99146\), 0, \(-0.08453\)]\), "\[IndentingNewLine]", 
+    \(n19 = nl19/nl19length\), "\[IndentingNewLine]", 
+    \(\)}], "Input"],
+
+Cell[BoxData[
+    \(\@\(x\^2 + y\^2 + z\^2\)\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 1}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 1, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-1\), 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({0, \(-1\), 0}\)], "Output"],
+
+Cell[BoxData[
+    \({1, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, \(-1\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0.99037`, 0.01246`, 0.13786`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.08453`\), 0.09932`, 0.99146`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\:0430\
+\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\:0437\
+\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\:0430\
+\:043b\:0435\:0439 n1...n6 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\:043b\
+\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\:043e\
+\:043c pi1 :"\)], "Print"],
+
+Cell[BoxData[
+    \(0.13786`\)], "Output"],
+
+Cell[BoxData[
+    \(0.01246`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.99037`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.01246`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.99037`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.13786`\)\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n7 (G(p1) \:0438 \
+\:0441\:0432\:044f\:0437\:0438 1-3) :"\)], "Print"],
+
+Cell[BoxData[
+    \({\(-0.13786`\), 0.`, 0.99037`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9999190549739514`\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.1378711599846363`\), 0.`, 0.9904501720149734`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n8 (G(p1) \:0438 \
+\:0441\:0432\:044f\:0437\:0438 1-4) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.`, \(-0.13786`\), 0.01246`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.13842193178828274`\)], "Output"],
+
+Cell[BoxData[
+    \({0.`, \(-0.9959404425221994`\), 0.09001463741351083`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n9 (G(p1) \:0438 \
+\:0441\:0432\:044f\:0437\:0438 5-4) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.01246`, \(-0.99037`\), 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9904483775038454`\)], "Output"],
+
+Cell[BoxData[
+    \({0.012580160948319211`, \(-0.9999208666442131`\), 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n10 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 5-6) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.13786`, 0.`, \(-0.99037`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9999190549739514`\)], "Output"],
+
+Cell[BoxData[
+    \({0.1378711599846363`, 0.`, \(-0.9904501720149734`\)}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n11 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-6) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.`, 0.13786`, \(-0.01246`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.13842193178828274`\)], "Output"],
+
+Cell[BoxData[
+    \({0.`, 0.9959404425221994`, \(-0.09001463741351083`\)}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n12 (G(p1) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-3) :"\)], "Print"],
+
+Cell[BoxData[
+    \({\(-0.01246`\), 0.99037`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9904483775038454`\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.012580160948319211`\), 0.9999208666442131`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\:0430\
+\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\:0437\
+\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\:0430\
+\:043b\:0435\:0439 n1...n12 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\:043b\
+\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\:043e\
+\:043c pi2 :"\)], "Print"],
+
+Cell[BoxData[
+    \(0.99146`\)], "Output"],
+
+Cell[BoxData[
+    \(0.09932`\)], "Output"],
+
+Cell[BoxData[
+    \(0.08453`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.09932`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.08453`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.99146`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.9936459766994669`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.009670892341305401`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.10037554148006468`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.9936459766994669`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.009670892341305401`\)], "Output"],
+
+Cell[BoxData[
+    \(0.10037554148006468`\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n13 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-8) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.`, \(-0.9874351111430598`\), 0.09891680475130485`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9923772634337783`\)], "Output"],
+
+Cell[BoxData[
+    \({0.`, \(-0.9950198856092108`\), 0.09967661331642913`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n14 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 1-5) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.99146`, 0.`, 0.08453`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9950569091765555`\)], "Output"],
+
+Cell[BoxData[
+    \({0.9963852226507004`, 0.`, 0.08494991514601062`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n15 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-5) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.09932`, 0.08453`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \(0.13042155995079954`\)], "Output"],
+
+Cell[BoxData[
+    \({0.7615305325091009`, 0.6481290365786779`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n16 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 2-10) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.013693363609674079`, 
+      0.993645976699467`, \(-0.09837151108452717`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9985974110776763`\)], "Output"],
+
+Cell[BoxData[
+    \({0.013712596745966263`, 
+      0.9950416110403634`, \(-0.09850967966997394`\)}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n17 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 11-10) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.0013333371451823106`, 
+      0.9896122137444702`, \(-0.09902121929298056`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9945548316962933`\)], "Output"],
+
+Cell[BoxData[
+    \({0.0013406371400440503`, 
+      0.9950303213113015`, \(-0.09956335853709736`\)}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n18 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 11-6) :"\)], "Print"],
+
+Cell[BoxData[
+    \({0.`, 0.9874351111430598`, \(-0.09891680475130485`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9923772634337783`\)], "Output"],
+
+Cell[BoxData[
+    \({0.`, 0.9950198856092108`, \(-0.09967661331642913`\)}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0440\:0430\:0441\:0447\:0435\:0442 \:0443\:0437\:043b\:0430 \:043f\
+\:0435\:0440\:0435\:0441\:0435\:0447\:0435\:043d\:0438\:044f n19 (G(p2) \
+\:0438 \:0441\:0432\:044f\:0437\:0438 3-6) :"\)], "Print"],
+
+Cell[BoxData[
+    \({\(-0.99146`\), 0.`, \(-0.08453`\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0.9950569091765555`\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.9963852226507004`\), 0.`, \(-0.08494991514601062`\)}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1152}, {0, 819}},
+WindowSize->{1144, 792},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 8389, 136, 1894, "Input"],
+Cell[10168, 191, 58, 1, 35, "Output"],
+Cell[10229, 194, 43, 1, 29, "Output"],
+Cell[10275, 197, 43, 1, 29, "Output"],
+Cell[10321, 200, 48, 1, 29, "Output"],
+Cell[10372, 203, 48, 1, 29, "Output"],
+Cell[10423, 206, 43, 1, 29, "Output"],
+Cell[10469, 209, 48, 1, 29, "Output"],
+Cell[10520, 212, 64, 1, 29, "Output"],
+Cell[10587, 215, 69, 1, 29, "Output"],
+Cell[10659, 218, 419, 6, 25, "Print"],
+Cell[11081, 226, 42, 1, 29, "Output"],
+Cell[11126, 229, 42, 1, 29, "Output"],
+Cell[11171, 232, 47, 1, 29, "Output"],
+Cell[11221, 235, 47, 1, 29, "Output"],
+Cell[11271, 238, 42, 1, 29, "Output"],
+Cell[11316, 241, 47, 1, 29, "Output"],
+Cell[11366, 244, 222, 3, 25, "Print"],
+Cell[11591, 249, 64, 1, 29, "Output"],
+Cell[11658, 252, 53, 1, 29, "Output"],
+Cell[11714, 255, 86, 1, 29, "Output"],
+Cell[11803, 258, 222, 3, 25, "Print"],
+Cell[12028, 263, 64, 1, 29, "Output"],
+Cell[12095, 266, 54, 1, 29, "Output"],
+Cell[12152, 269, 87, 1, 29, "Output"],
+Cell[12242, 272, 222, 3, 25, "Print"],
+Cell[12467, 277, 64, 1, 29, "Output"],
+Cell[12534, 280, 53, 1, 29, "Output"],
+Cell[12590, 283, 88, 1, 29, "Output"],
+Cell[12681, 286, 223, 3, 25, "Print"],
+Cell[12907, 291, 64, 1, 29, "Output"],
+Cell[12974, 294, 53, 1, 29, "Output"],
+Cell[13030, 297, 86, 1, 29, "Output"],
+Cell[13119, 300, 223, 3, 25, "Print"],
+Cell[13345, 305, 64, 1, 29, "Output"],
+Cell[13412, 308, 54, 1, 29, "Output"],
+Cell[13469, 311, 87, 1, 29, "Output"],
+Cell[13559, 314, 223, 3, 25, "Print"],
+Cell[13785, 319, 64, 1, 29, "Output"],
+Cell[13852, 322, 53, 1, 29, "Output"],
+Cell[13908, 325, 88, 1, 29, "Output"],
+Cell[13999, 328, 420, 6, 25, "Print"],
+Cell[14422, 336, 42, 1, 29, "Output"],
+Cell[14467, 339, 42, 1, 29, "Output"],
+Cell[14512, 342, 42, 1, 29, "Output"],
+Cell[14557, 345, 47, 1, 29, "Output"],
+Cell[14607, 348, 47, 1, 29, "Output"],
+Cell[14657, 351, 47, 1, 29, "Output"],
+Cell[14707, 354, 53, 1, 29, "Output"],
+Cell[14763, 357, 60, 1, 29, "Output"],
+Cell[14826, 360, 59, 1, 29, "Output"],
+Cell[14888, 363, 58, 1, 29, "Output"],
+Cell[14949, 366, 55, 1, 29, "Output"],
+Cell[15007, 369, 54, 1, 29, "Output"],
+Cell[15064, 372, 223, 3, 25, "Print"],
+Cell[15290, 377, 87, 1, 29, "Output"],
+Cell[15380, 380, 53, 1, 29, "Output"],
+Cell[15436, 383, 87, 1, 29, "Output"],
+Cell[15526, 386, 223, 3, 25, "Print"],
+Cell[15752, 391, 59, 1, 29, "Output"],
+Cell[15814, 394, 53, 1, 29, "Output"],
+Cell[15870, 397, 82, 1, 29, "Output"],
+Cell[15955, 400, 223, 3, 25, "Print"],
+Cell[16181, 405, 59, 1, 29, "Output"],
+Cell[16243, 408, 54, 1, 29, "Output"],
+Cell[16300, 411, 81, 1, 29, "Output"],
+Cell[16384, 414, 224, 3, 25, "Print"],
+Cell[16611, 419, 111, 2, 29, "Output"],
+Cell[16725, 423, 53, 1, 29, "Output"],
+Cell[16781, 426, 112, 2, 29, "Output"],
+Cell[16896, 430, 225, 3, 25, "Print"],
+Cell[17124, 435, 113, 2, 29, "Output"],
+Cell[17240, 439, 53, 1, 29, "Output"],
+Cell[17296, 442, 113, 2, 29, "Output"],
+Cell[17412, 446, 224, 3, 25, "Print"],
+Cell[17639, 451, 87, 1, 29, "Output"],
+Cell[17729, 454, 53, 1, 29, "Output"],
+Cell[17785, 457, 87, 1, 29, "Output"],
+Cell[17875, 460, 223, 3, 25, "Print"],
+Cell[18101, 465, 69, 1, 29, "Output"],
+Cell[18173, 468, 53, 1, 29, "Output"],
+Cell[18229, 471, 92, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

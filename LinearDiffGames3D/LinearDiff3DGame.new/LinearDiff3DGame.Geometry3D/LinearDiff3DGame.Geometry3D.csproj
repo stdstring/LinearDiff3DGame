@@ -1,0 +1,109 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F12F23F-B43E-46B8-B371-9EBC5A90A476}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinearDiff3DGame.Geometry3D</RootNamespace>
+    <AssemblyName>LinearDiff3DGame.Geometry3D</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CoordTransformation3D.cs" />
+    <Compile Include="Common\CoordTransformation3D_Test.cs" />
+    <Compile Include="Common\Geometry3DObjectFactory.cs" />
+    <Compile Include="Common\Plane3D.cs" />
+    <Compile Include="Common\Point3D.cs" />
+    <Compile Include="Common\Point3DExtensions.cs" />
+    <Compile Include="Common\Point3DExtensions_Test.cs" />
+    <Compile Include="Common\ScalingTransformation3D.cs" />
+    <Compile Include="Common\ScalingTransformation3D_Test.cs" />
+    <Compile Include="Common\Vector3D.cs" />
+    <Compile Include="Common\Vector3DApproxComparer.cs" />
+    <Compile Include="Common\Vector3DExtensions.cs" />
+    <Compile Include="Common\Vector3DExtensions_Test.cs" />
+    <Compile Include="Common\Vector3DUtils.cs" />
+    <Compile Include="Common\Vector3DUtils_Test.cs" />
+    <Compile Include="PolyhedronGraphTriangulation\SimpleDeloneTriangulation.cs" />
+    <Compile Include="PolyhedronGraph\IPolyhedron3DGraph.cs" />
+    <Compile Include="PolyhedronGraph\IPolyhedron3DGraphNode.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraph.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraphFactory.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraphFactory_Test.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraphNode.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraphSimpleTriangulator.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraphSimpleTriangulator_Test.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraph_ScaleTransformer.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraph_ScaleTransformer_Test.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraph_Utils.cs" />
+    <Compile Include="PolyhedronGraph\Polyhedron3DGraph_Utils_Test.cs" />
+    <Compile Include="Polyhedron\Polyhedron3D.cs" />
+    <Compile Include="Polyhedron\Polyhedron3DEqualityChecker.cs" />
+    <Compile Include="Polyhedron\Polyhedron3DEqualityChecker_Test.cs" />
+    <Compile Include="PolyhedronFactory\Polyhedron3DFromPointsFactory.cs" />
+    <Compile Include="PolyhedronFactory\Polyhedron3DFromGraphFactory.cs" />
+    <Compile Include="PolyhedronFactory\Polyhedron3DFromPointsFactory_Test.cs" />
+    <Compile Include="Polyhedron\Polyhedron3DExtensions.cs" />
+    <Compile Include="Polyhedron\Polyhedron3DExtensions_Test.cs" />
+    <Compile Include="Polyhedron\PolyhedronSide3D.cs" />
+    <Compile Include="Polyhedron\PolyhedronVertex3D.cs" />
+    <Compile Include="Polyhedron\VertexSidesDictionary.cs" />
+    <Compile Include="Polyhedron\VertexSidesDictionary_Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearDiff3DGame.AdvMath\LinearDiff3DGame.AdvMath.csproj">
+      <Project>{41DBD31A-D61A-4C61-908F-4D045DAF3411}</Project>
+      <Name>LinearDiff3DGame.AdvMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Common\LinearDiff3DGame.Common.csproj">
+      <Project>{94D3589B-9D7F-4A53-830A-21DDEDF2BA34}</Project>
+      <Name>LinearDiff3DGame.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8591150-E2BD-42EB-A1C9-AF2392FBDEE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinearDiff3DGame.Serialization</RootNamespace>
+    <AssemblyName>LinearDiff3DGame.Serialization</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.3.9345, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bridge\BridgeSerializer.cs" />
+    <Compile Include="Bridge\BridgeSerializer_Test.cs" />
+    <Compile Include="Bridge\LazyBridgeSerializer.cs" />
+    <Compile Include="Bridge\LazyBridgeSerializer_Test.cs" />
+    <Compile Include="Common\DoubleBinarySerializer.cs" />
+    <Compile Include="Common\DoubleBinarySerializer_Test.cs" />
+    <Compile Include="Common\EnumerableBinarySerializer.cs" />
+    <Compile Include="Common\EnumerableBinarySerializer_Test.cs" />
+    <Compile Include="Common\Int32BinarySerializer.cs" />
+    <Compile Include="Common\Int32BinarySerializer_Test.cs" />
+    <Compile Include="Common\LazyEnumerableBinarySerializer.cs" />
+    <Compile Include="Common\LazyEnumerableBinarySerializer_Test.cs" />
+    <Compile Include="Common\PairBinarySerializer.cs" />
+    <Compile Include="Common\PairBinarySerializer_Test.cs" />
+    <Compile Include="Geometry3D\Point3DBinarySerializer.cs" />
+    <Compile Include="Geometry3D\Point3DBinarySerializer_Test.cs" />
+    <Compile Include="Geometry3D\Polyhedron3DBinarySerializer_Test.cs" />
+    <Compile Include="Geometry3D\PolyhedronSide3DBinarySerializer.cs" />
+    <Compile Include="Geometry3D\PolyhedronSide3DBinarySerializer_Test.cs" />
+    <Compile Include="Geometry3D\PolyhedronVertex3DBinarySerializer.cs" />
+    <Compile Include="Geometry3D\PolyhedronVertex3DBinarySerializer_Test.cs" />
+    <Compile Include="Geometry3D\Vector3DBinarySerializer.cs" />
+    <Compile Include="Geometry3D\Vector3DBinarySerializer_Test.cs" />
+    <Compile Include="ISerializer.cs" />
+    <Compile Include="Geometry3D\Polyhedron3DBinarySerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testing\EnumerableEqualityTester.cs" />
+    <Compile Include="Testing\EnumerableEqualityTester_Test.cs" />
+    <Compile Include="Testing\PairEqualityTester.cs" />
+    <Compile Include="Testing\Polyhedron3DEqualityTester.cs" />
+    <Compile Include="Testing\PolyhedronSide3DEqualityTester.cs" />
+    <Compile Include="Testing\PolyhedronVertex3DEqualityTester.cs" />
+    <Compile Include="Testing\SerializerTest.cs" />
+    <Compile Include="Testing\SerializerTestHelper.cs" />
+    <Compile Include="Testing\TestDataGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bridge\BridgeSerializer.info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearDiff3DGame.Common\LinearDiff3DGame.Common.csproj">
+      <Project>{94D3589B-9D7F-4A53-830A-21DDEDF2BA34}</Project>
+      <Name>LinearDiff3DGame.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Geometry3D\LinearDiff3DGame.Geometry3D.csproj">
+      <Project>{8F12F23F-B43E-46B8-B371-9EBC5A90A476}</Project>
+      <Name>LinearDiff3DGame.Geometry3D</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Geometry3D\Polyhedron3DBinarySerializer.info.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,87 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41DBD31A-D61A-4C61-908F-4D045DAF3411}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinearDiff3DGame.AdvMath</RootNamespace>
+    <AssemblyName>LinearDiff3DGame.AdvMath</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\ConvexSystemExtremumFinder.cs" />
+    <Compile Include="Algorithms\ConvexSystemExtremumFinder_Test.cs" />
+    <Compile Include="Algorithms\ConvexSystemFinder.cs" />
+    <Compile Include="Algorithms\ConvexSystemFinder_Test.cs" />
+    <Compile Include="Common\AdvTrigonometry.cs" />
+    <Compile Include="Common\ApproxComp.cs" />
+    <Compile Include="LinearEquationsSet\ILinearEquationsSystemSolver.cs" />
+    <Compile Include="LinearEquationsSet\LESGaussSolver.cs" />
+    <Compile Include="LinearEquationsSet\LESGaussZeidelSolver.cs" />
+    <Compile Include="LinearEquationsSet\LESKramer3Solver.cs" />
+    <Compile Include="MatrixUtils\InverseMatrixBuilder.cs" />
+    <Compile Include="MatrixUtils\InverseMatrixBuilder_Test.cs" />
+    <Compile Include="MatrixUtils\MatrixComparer.cs" />
+    <Compile Include="MatrixUtils\MatrixComparer_Test.cs" />
+    <Compile Include="MatrixUtils\MatrixFactory.cs" />
+    <Compile Include="MatrixUtils\MatrixFactory_Test.cs" />
+    <Compile Include="Matrix\FundCauchyMatrix.cs" />
+    <Compile Include="Matrix\IncorrectMatrixSizeException.cs" />
+    <Compile Include="Matrix\Matrix.cs" />
+    <Compile Include="Matrix\MatrixExtensions.cs" />
+    <Compile Include="Matrix\MatrixExtensions_Test.cs" />
+    <Compile Include="Matrix\Matrix_Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearDiff3DGame.Common\LinearDiff3DGame.Common.csproj">
+      <Project>{94D3589B-9D7F-4A53-830A-21DDEDF2BA34}</Project>
+      <Name>LinearDiff3DGame.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

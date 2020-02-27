@@ -1,0 +1,108 @@
+Polyhedron Structure Description :
+Side number 1 :
+Has normal with coords (0; 0,894427190999916; 0,447213595499958)
+Vertex number 1 with coords (0;0;1)
+Vertex number 2 with coords (1;1;-1)
+Vertex number 3 with coords (-1;1;-1)
+
+
+Side number 2 :
+Has normal with coords (0,894427190999916; 0; 0,447213595499958)
+Vertex number 1 with coords (0;0;1)
+Vertex number 5 with coords (1;-1;-1)
+Vertex number 2 with coords (1;1;-1)
+
+
+Side number 3 :
+Has normal with coords (0; 0; -1)
+Vertex number 2 with coords (1;1;-1)
+Vertex number 5 with coords (1;-1;-1)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 3 with coords (-1;1;-1)
+
+
+Side number 4 :
+Has normal with coords (-0,894427190999916; 0; 0,447213595499958)
+Vertex number 3 with coords (-1;1;-1)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 1 with coords (0;0;1)
+
+
+Side number 5 :
+Has normal with coords (0; -0,894427190999916; 0,447213595499958)
+Vertex number 1 with coords (0;0;1)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 5 with coords (1;-1;-1)
+
+
+
+Polyhedron Graph Description :
+PGNode number 1 has conn. with folowing PGNodes : 
+	PGNode number 2
+	PGNode number 3
+	PGNode number 4
+
+
+PGNode number 2 has conn. with folowing PGNodes : 
+	PGNode number 5
+	PGNode number 3
+	PGNode number 1
+
+
+PGNode number 3 has conn. with folowing PGNodes : 
+	PGNode number 2
+	PGNode number 5
+	PGNode number 4
+	PGNode number 1
+
+
+PGNode number 4 has conn. with folowing PGNodes : 
+	PGNode number 3
+	PGNode number 5
+	PGNode number 1
+
+
+PGNode number 5 has conn. with folowing PGNodes : 
+	PGNode number 4
+	PGNode number 3
+	PGNode number 2
+
+
+
+Polyhedron Structure Description after restoration from graph :
+Side number 1 :
+Has normal with coords (0; 0,894427190999916; 0,447213595499958)
+Vertex number 0 with coords (1;1;-1)
+Vertex number 1 with coords (-1;1;-1)
+Vertex number 2 with coords (0;0;1)
+
+
+Side number 2 :
+Has normal with coords (0,894427190999916; 0; 0,447213595499958)
+Vertex number 3 with coords (1;-1;-1)
+Vertex number 0 with coords (1;1;-1)
+Vertex number 2 with coords (0;0;1)
+
+
+Side number 3 :
+Has normal with coords (0; 0; -1)
+Vertex number 3 with coords (1;-1;-1)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 1 with coords (-1;1;-1)
+Vertex number 0 with coords (1;1;-1)
+
+
+Side number 4 :
+Has normal with coords (-0,894427190999916; 0; 0,447213595499958)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 2 with coords (0;0;1)
+Vertex number 1 with coords (-1;1;-1)
+
+
+Side number 5 :
+Has normal with coords (0; -0,894427190999916; 0,447213595499958)
+Vertex number 4 with coords (-1;-1;-1)
+Vertex number 3 with coords (1;-1;-1)
+Vertex number 2 with coords (0;0;1)
+
+

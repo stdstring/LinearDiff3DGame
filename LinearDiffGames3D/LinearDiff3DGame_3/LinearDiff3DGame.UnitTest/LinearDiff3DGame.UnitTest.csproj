@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D29CC7E5-2C33-4BDE-AF8B-F7D44AF4312F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LinearDiff3DGame.UnitTest</RootNamespace>
+    <AssemblyName>LinearDiff3DGame.UnitTest</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Polyhedron3DFactoryTest.cs" />
+    <Compile Include="Polyhedron3DGraphFactoryTest.cs" />
+    <Compile Include="Polyhedron3DGraphTriangulatorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearDiff3DGame.AdvMath\LinearDiff3DGame.AdvMath.csproj">
+      <Project>{41DBD31A-D61A-4C61-908F-4D045DAF3411}</Project>
+      <Name>LinearDiff3DGame.AdvMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Common\LinearDiff3DGame.Common.csproj">
+      <Project>{94D3589B-9D7F-4A53-830A-21DDEDF2BA34}</Project>
+      <Name>LinearDiff3DGame.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Geometry3D\LinearDiff3DGame.Geometry3D.csproj">
+      <Project>{8F12F23F-B43E-46B8-B371-9EBC5A90A476}</Project>
+      <Name>LinearDiff3DGame.Geometry3D</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

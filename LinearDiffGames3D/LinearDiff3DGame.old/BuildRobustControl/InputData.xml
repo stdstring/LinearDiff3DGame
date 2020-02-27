@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InputData>
+    <MatrixA>
+        <Row>0 1 0</Row>
+        <Row>0 0 1</Row>
+        <Row>0 0 0</Row>
+    </MatrixA>
+    <MatrixB>
+        <Row>0</Row>
+        <Row>0</Row>
+        <Row>1</Row>
+    </MatrixB>
+    <MatrixC>
+        <Row>1</Row>
+        <Row>0</Row>
+        <Row>0</Row>
+    </MatrixC>
+    <FinalSet>
+        <Point3D>2 2 2</Point3D>
+        <Point3D>-2 2 2</Point3D>
+        <Point3D>2 -2 2</Point3D>
+        <Point3D>-2 -2 2</Point3D>
+        <Point3D>2 2 -2</Point3D>
+        <Point3D>-2 2 -2</Point3D>
+        <Point3D>2 -2 -2</Point3D>
+        <Point3D>-2 -2 -2</Point3D>
+    </FinalSet>
+    <FirstGamer>
+        <Mp>1</Mp>
+    </FirstGamer>
+    <SecondGamer>
+        <Mq>1</Mq>
+        <MaxVValue>7</MaxVValue>
+    </SecondGamer>
+    <DeltaT>0,1</DeltaT>
+    <MinVectorDistinguishAngle>0,01</MinVectorDistinguishAngle>
+    <Epsilon>1e-9</Epsilon>
+    <StartTime>0</StartTime>
+    <FinishTime>1,5</FinishTime>
+    <DeltaScale>0,05</DeltaScale>
+    <StartPoint>0 0 0</StartPoint>
+    <DeltaMq>0,1</DeltaMq>
+    <DeltaFSKoeff>0,15</DeltaFSKoeff>
+    <BridgesCount>10</BridgesCount>
+</InputData>

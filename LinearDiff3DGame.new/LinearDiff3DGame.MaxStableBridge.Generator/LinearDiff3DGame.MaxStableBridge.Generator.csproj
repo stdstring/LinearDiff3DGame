@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28E23309-BF59-4227-A07E-AB05FED028AA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinearDiff3DGame.MaxStableBridge.Generator</RootNamespace>
+    <AssemblyName>LinearDiff3DGame.MaxStableBridge.Generator</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PostProcess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearDiff3DGame.AdvMath\LinearDiff3DGame.AdvMath.csproj">
+      <Project>{41DBD31A-D61A-4C61-908F-4D045DAF3411}</Project>
+      <Name>LinearDiff3DGame.AdvMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Common\LinearDiff3DGame.Common.csproj">
+      <Project>{94D3589B-9D7F-4A53-830A-21DDEDF2BA34}</Project>
+      <Name>LinearDiff3DGame.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Geometry3D\LinearDiff3DGame.Geometry3D.csproj">
+      <Project>{8F12F23F-B43E-46B8-B371-9EBC5A90A476}</Project>
+      <Name>LinearDiff3DGame.Geometry3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.MaxStableBridge\LinearDiff3DGame.MaxStableBridge.csproj">
+      <Project>{121D8898-2506-4351-9B19-5E7D740A7A2A}</Project>
+      <Name>LinearDiff3DGame.MaxStableBridge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinearDiff3DGame.Serialization\LinearDiff3DGame.Serialization.csproj">
+      <Project>{D8591150-E2BD-42EB-A1C9-AF2392FBDEE6}</Project>
+      <Name>LinearDiff3DGame.Serialization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

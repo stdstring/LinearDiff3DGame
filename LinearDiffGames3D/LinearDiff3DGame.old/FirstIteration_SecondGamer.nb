@@ -1,0 +1,1958 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     61901,       1655]*)
+(*NotebookOutlinePosition[     62545,       1677]*)
+(*  CellTagsIndexPosition[     62501,       1673]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(length[x_, y_, z_] = \@\(x\^2 + y\^2 + z\^2\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(deltaT\  = \ 0.1\), "\[IndentingNewLine]", 
+    \(R1 = {0, 0, 0}\), "\[IndentingNewLine]", 
+    \(R2\  = \ {2.5, 2.5, 2.5}\), "\[IndentingNewLine]", 
+    \(R3\  = \ {\(-2.5\), 2.5, 2.5}\), "\[IndentingNewLine]", 
+    \(R4\  = \ {\(-2.5\), \(-2.5\), 2.5}\), "\[IndentingNewLine]", 
+    \(R5\  = \ {2.5, \(-2.5\), 2.5}\), "\[IndentingNewLine]", 
+    \(SuppWi[n_]\  = \ 
+      Max[n . R1, n . R2, \ n . R3, \ n . R4, \ 
+        n . R5]\), "\[IndentingNewLine]", 
+    \(P1\  = {\(-0.1\), \(-1\), 0}\), "\[IndentingNewLine]", 
+    \(P2 = {0.1, 1, 0}\), "\[IndentingNewLine]", 
+    \(SuppPi[n_]\  = \ 
+      Max[deltaT*n . P1, deltaT*n . P2]\), "\[IndentingNewLine]", 
+    \(Q1\  = {\(-1\), 0, 0}\), "\[IndentingNewLine]", 
+    \(Q2 = {1, 0, 0}\), "\[IndentingNewLine]", 
+    \(SuppQi[n_]\  = \ 
+      Max[deltaT*n . Q1, deltaT*n . Q2]\), "\[IndentingNewLine]", 
+    \(\(\(FuncFi[n_] = 
+      SuppWi[n] + SuppPi[n] - SuppQi[n]\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(n1 = {0, 
+        0.707106781186547, \(-0.707106781186547\)}\), "\[IndentingNewLine]", 
+    \(n2 = {\(-0.707106781186547\), 
+        0, \(-0.707106781186547\)}\), "\[IndentingNewLine]", 
+    \(n3 = {0, 0, 1}\), "\[IndentingNewLine]", 
+    \(n4 = {0.707106781186547, 
+        0, \(-0.707106781186547\)}\), "\[IndentingNewLine]", 
+    \(n5 = {0, \(-0.707106781186547\), \(-0.707106781186547\)}\), "\
+\[IndentingNewLine]", 
+    \(n6 = {\(-0.671156\), 
+        0.0671156, \ \(-0.738272\)}\), "\[IndentingNewLine]", 
+    \(n7 = {0.671156, \(-0.0671156\), \ \(-0.738272\)}\), \
+"\[IndentingNewLine]", 
+    \(\(\(n8 = {0, 0, \(-1\)}\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(pidv\  = \ {0.1, 1, 0}\), "\[IndentingNewLine]", 
+    \(\(\(qidv\  = \ {1, 0, 0}\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(Print["\<\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\
+\:0430\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\
+\:0437\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\
+\:0430\:043b\:0435\:0439 n1...n8 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\
+\:043b\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\
+\:043e\:043c qidv :\>"]\), "\[IndentingNewLine]", 
+    \(n1 . qidv\), "\[IndentingNewLine]", 
+    \(n2 . qidv\), "\[IndentingNewLine]", 
+    \(n3 . qidv\), "\[IndentingNewLine]", 
+    \(n4 . qidv\), "\[IndentingNewLine]", 
+    \(n5 . qidv\), "\[IndentingNewLine]", 
+    \(n6 . qidv\), "\[IndentingNewLine]", 
+    \(n7 . qidv\), "\[IndentingNewLine]", 
+    \(\(\(n8 . qidv\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(Print["\<\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0444-\:0446\
+\:0438\:0438 Fi \:0434\:043b\:044f \:043d\:043e\:0440\:043c\:0430\:043b\:0435\
+\:0439 n1...n8 :\>"]\), "\[IndentingNewLine]", 
+    \(FuncFi1\  = FuncFi[n1]\), "\[IndentingNewLine]", 
+    \(FuncFi2\  = FuncFi[n2]\), "\[IndentingNewLine]", 
+    \(FuncFi3\  = FuncFi[n3]\), "\[IndentingNewLine]", 
+    \(FuncFi4\  = FuncFi[n4]\), "\[IndentingNewLine]", 
+    \(FuncFi5\  = FuncFi[n5]\), "\[IndentingNewLine]", 
+    \(FuncFi6\  = FuncFi[n6]\), "\[IndentingNewLine]", 
+    \(FuncFi7\  = FuncFi[n7]\), "\[IndentingNewLine]", 
+    \(FuncFi8\  = FuncFi[n8]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(\[Epsilon] = 10\^\(-9\)\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:043f\:0440\:043e\:0432\:0435\:0440\:043a\:0430 \:043f\:043e\
+\:0434\:043e\:0437\:0440\:0438\:0442\:0435\:043b\:044c\:043d\:044b\:0445 \
+\:0441\:0432\:044f\:0437\:0435\:0439\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-6 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A16\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}, {Extract[n8, 1], Extract[n8, 2], 
+          Extract[n8, 3]}}\), "\[IndentingNewLine]", 
+    \(B16 = {FuncFi1, FuncFi6, FuncFi8}\), "\[IndentingNewLine]", 
+    \(Solution16\  = \ LinearSolve[A16, B16]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution16 = \>", 
+      n3 . Solution16]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution16 <= FuncFi3) = \>", 
+      n3 . Solution16\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-6 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-3 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A13\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}}\), "\[IndentingNewLine]", 
+    \(B13 = {FuncFi1, FuncFi3, FuncFi6}\), "\[IndentingNewLine]", 
+    \(Solution13\  = \ LinearSolve[A13, B13]\), "\[IndentingNewLine]", 
+    \(Print["\<n4.Solution13 = \>", 
+      n4 . Solution13]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi4 = \>", FuncFi4]\), "\[IndentingNewLine]", 
+    \(Print["\<(n4.Solution13 <= FuncFi3) = \>", 
+      n4 . Solution13\  <= \ FuncFi4]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-3 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-4 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A14\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}}\), "\[IndentingNewLine]", 
+    \(B14 = {FuncFi1, FuncFi4, FuncFi3}\), "\[IndentingNewLine]", 
+    \(Solution14\  = \ LinearSolve[A14, B14]\), "\[IndentingNewLine]", 
+    \(Print["\<n7.Solution14 = \>", 
+      n7 . Solution14]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi7 = \>", FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<(n7.Solution14 <= FuncFi7) = \>", 
+      n7 . Solution14\  <= \ FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-4 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A17\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}}\), "\[IndentingNewLine]", 
+    \(B17 = {FuncFi1, FuncFi7, FuncFi4}\), "\[IndentingNewLine]", 
+    \(Solution17\  = \ LinearSolve[A17, B17]\), "\[IndentingNewLine]", 
+    \(Print["\<n8.Solution17 = \>", 
+      n8 . Solution17]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi8 = \>", FuncFi8]\), "\[IndentingNewLine]", 
+    \(Print["\<(n8.Solution17 <= FuncFi8) = \>", 
+      n8 . Solution17\  <= \ FuncFi8]\), "\[IndentingNewLine]", 
+    \(Print["\<(Abs[n8.Solution17-FuncFi8]<\[Epsilon]) = \>", 
+      Abs[n8 . Solution17 - FuncFi8] < \[Epsilon]]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-8 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A18\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n8, 1], Extract[n8, 2], 
+          Extract[n8, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}}\), "\[IndentingNewLine]", 
+    \(B18 = {FuncFi1, FuncFi8, FuncFi7}\), "\[IndentingNewLine]", 
+    \(Solution18\  = \ LinearSolve[A18, B18]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution18 = \>", 
+      n6 . Solution18]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution18 <= FuncFi6) = \>", 
+      n6 . Solution18\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-8 \:043d\:0435\:0432\:044b\
+\:043f\:0443\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(LambdaKoeff18 = 
+      LinearSolve[{{Extract[n1, 1], Extract[n8, 1], 
+            Extract[n7, 1]}, {Extract[n1, 2], Extract[n8, 2], 
+            Extract[n7, 2]}, {Extract[n1, 3], Extract[n8, 3], 
+            Extract[n7, 3]}}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}]\), "\[IndentingNewLine]", 
+    \(Print["\<(\[Lambda]1,\[Lambda]2,\[Lambda]3) = \>", 
+      LambdaKoeff18]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0443\:0434\:0430\:043b\:044f\:0435\:043c \:0443\:0437\:0435\
+\:043b 8\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-3 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A23\  = \ {{Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}}\), "\[IndentingNewLine]", 
+    \(B23 = {FuncFi2, FuncFi3, FuncFi5}\), "\[IndentingNewLine]", 
+    \(Solution23\  = \ LinearSolve[A23, B23]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution23 = \>", 
+      n6 . Solution23]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution23 <= FuncFi6) = \>", 
+      n6 . Solution23\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-3 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-5 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A35\  = \ {{Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}}\), "\[IndentingNewLine]", 
+    \(B35 = {FuncFi3, FuncFi5, FuncFi2}\), "\[IndentingNewLine]", 
+    \(Solution35\  = \ LinearSolve[A35, B35]\), "\[IndentingNewLine]", 
+    \(Print["\<n7.Solution35 = \>", 
+      n7 . Solution35]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi7 = \>", FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<(n7.Solution35 <= FuncFi7) = \>", 
+      n7 . Solution35\  <= \ FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-5 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A37\  = \ {{Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}}\), "\[IndentingNewLine]", 
+    \(B37 = {FuncFi3, FuncFi7, FuncFi5}\), "\[IndentingNewLine]", 
+    \(Solution37\  = \ LinearSolve[A37, B37]\), "\[IndentingNewLine]", 
+    \(Print["\<n4.Solution37 = \>", 
+      n4 . Solution37]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi4 = \>", FuncFi4]\), "\[IndentingNewLine]", 
+    \(Print["\<(n4.Solution37 <= FuncFi4) = \>", 
+      n4 . Solution37\  <= \ FuncFi4]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-4 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A34\  = \ {{Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}}\), "\[IndentingNewLine]", 
+    \(B34 = {FuncFi3, FuncFi4, FuncFi7}\), "\[IndentingNewLine]", 
+    \(Solution34\  = \ LinearSolve[A34, B34]\), "\[IndentingNewLine]", 
+    \(Print["\<n1.Solution34 = \>", 
+      n1 . Solution34]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi1 = \>", FuncFi1]\), "\[IndentingNewLine]", 
+    \(Print["\<(n1.Solution34 <= FuncFi1) = \>", 
+      n1 . Solution34\  <= \ FuncFi1]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-4 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-6 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A36\  = \ {{Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}, {Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}}\), "\[IndentingNewLine]", 
+    \(B36 = {FuncFi3, FuncFi6, FuncFi1}\), "\[IndentingNewLine]", 
+    \(Solution36\  = \ LinearSolve[A36, B36]\), "\[IndentingNewLine]", 
+    \(Print["\<n2.Solution36 = \>", 
+      n2 . Solution36]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi2 = \>", FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<(n2.Solution36 <= FuncFi2) = \>", 
+      n2 . Solution36\  <= \ FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 3-6 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 5-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A57\  = \ {{Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}}\), "\[IndentingNewLine]", 
+    \(B57 = {FuncFi5, FuncFi7, FuncFi1}\), "\[IndentingNewLine]", 
+    \(Solution57\  = \ LinearSolve[A57, B57]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution57 = \>", 
+      n3 . Solution57]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution57 <= FuncFi3) = \>", 
+      n3 . Solution57\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 5-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-5 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A25\  = \ {{Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}}\), "\[IndentingNewLine]", 
+    \(B25 = {FuncFi2, FuncFi5, FuncFi1}\), "\[IndentingNewLine]", 
+    \(Solution25\  = \ LinearSolve[A25, B25]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution25 = \>", 
+      n3 . Solution25]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution25 <= FuncFi3) = \>", 
+      n3 . Solution25\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-5 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-5 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A15\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}}\), "\[IndentingNewLine]", 
+    \(B15 = {FuncFi1, FuncFi5, FuncFi7}\), "\[IndentingNewLine]", 
+    \(Solution15\  = \ LinearSolve[A15, B15]\), "\[IndentingNewLine]", 
+    \(Print["\<n2.Solution15 = \>", 
+      n2 . Solution15]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi2 = \>", FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<(n2.Solution15 <= FuncFi2) = \>", 
+      n2 . Solution15\  <= \ FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-5 \:043d\:0435\:0432\:044b\
+\:043f\:0443\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(LambdaKoeff15 = 
+      LinearSolve[{{Extract[n1, 1], Extract[n5, 1], 
+            Extract[n7, 1]}, {Extract[n1, 2], Extract[n5, 2], 
+            Extract[n7, 2]}, {Extract[n1, 3], Extract[n5, 3], 
+            Extract[n7, 3]}}, {Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}]\), "\[IndentingNewLine]", 
+    \(Print["\<(\[Lambda]1,\[Lambda]2,\[Lambda]3) = \>", 
+      LambdaKoeff15]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-5 \:0437\:0430\:043c\:0435\
+\:043d\:044f\:0435\:043c \:043d\:0430 2-7\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-2 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A12\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}}\), "\[IndentingNewLine]", 
+    \(B12 = {FuncFi1, FuncFi2, FuncFi7}\), "\[IndentingNewLine]", 
+    \(Solution12\  = \ LinearSolve[A12, B12]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution12 = \>", 
+      n6 . Solution12]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution12 <= FuncFi6) = \>", 
+      n6 . Solution12\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-2 \:043d\:0435\:0432\:044b\
+\:043f\:0443\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(LambdaKoeff12 = 
+      LinearSolve[{{Extract[n1, 1], Extract[n2, 1], 
+            Extract[n7, 1]}, {Extract[n1, 2], Extract[n2, 2], 
+            Extract[n7, 2]}, {Extract[n1, 3], Extract[n2, 3], 
+            Extract[n7, 3]}}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}]\), "\[IndentingNewLine]", 
+    \(Print["\<(\[Lambda]1,\[Lambda]2,\[Lambda]3) = \>", 
+      LambdaKoeff12]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-2 \:0437\:0430\:043c\:0435\
+\:043d\:044f\:0435\:043c \:043d\:0430 6-7\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A172\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}}\), "\[IndentingNewLine]", 
+    \(B172 = {FuncFi1, FuncFi7, FuncFi4}\), "\[IndentingNewLine]", 
+    \(Solution172\  = \ LinearSolve[A172, B172]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution17 = \>", 
+      n6 . Solution172]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution17 <= FuncFi6) = \>", 
+      n6 . Solution172\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-7 \:043d\:0435\:0432\:044b\
+\:043f\:0443\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(LambdaKoeff172 = 
+      LinearSolve[{{Extract[n1, 1], Extract[n7, 1], 
+            Extract[n4, 1]}, {Extract[n1, 2], Extract[n7, 2], 
+            Extract[n4, 2]}, {Extract[n1, 3], Extract[n7, 3], 
+            Extract[n4, 3]}}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}]\), "\[IndentingNewLine]", 
+    \(Print["\<(\[Lambda]1,\[Lambda]2,\[Lambda]3) = \>", 
+      LambdaKoeff172]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-7 \:0437\:0430\:043c\:0435\
+\:043d\:044f\:0435\:043c \:043d\:0430 4-6\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-6 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A162\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}}\), "\[IndentingNewLine]", 
+    \(B162 = {FuncFi1, FuncFi6, FuncFi4}\), "\[IndentingNewLine]", 
+    \(Solution162\  = \ LinearSolve[A162, B162]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution16 = \>", 
+      n3 . Solution162]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution16 <= FuncFi3) = \>", 
+      n3 . Solution162\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-6 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-5 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A252\  = \ {{Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}}\), "\[IndentingNewLine]", 
+    \(B252 = {FuncFi2, FuncFi5, FuncFi7}\), "\[IndentingNewLine]", 
+    \(Solution252\  = \ LinearSolve[A252, B252]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution25 = \>", 
+      n3 . Solution252]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution25 <= FuncFi3) = \>", 
+      n3 . Solution252\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-5 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 5-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A572\  = \ {{Extract[n5, 1], Extract[n5, 2], 
+          Extract[n5, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}}\), "\[IndentingNewLine]", 
+    \(B572 = {FuncFi5, FuncFi7, FuncFi2}\), "\[IndentingNewLine]", 
+    \(Solution572\  = \ LinearSolve[A572, B572]\), "\[IndentingNewLine]", 
+    \(Print["\<n3.Solution57 = \>", 
+      n3 . Solution572]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi3 = \>", FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<(n3.Solution57 <= FuncFi3) = \>", 
+      n3 . Solution572\  <= \ FuncFi3]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 5-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A27\  = \ {{Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}}\), "\[IndentingNewLine]", 
+    \(B27 = {FuncFi2, FuncFi7, FuncFi6}\), "\[IndentingNewLine]", 
+    \(Solution27\  = \ LinearSolve[A27, B27]\), "\[IndentingNewLine]", 
+    \(Print["\<n5.Solution27 = \>", 
+      n5 . Solution27]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi5 = \>", FuncFi5]\), "\[IndentingNewLine]", 
+    \(Print["\<(n5.Solution27 <= FuncFi5) = \>", 
+      n5 . Solution27\  <= \ FuncFi5]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-6 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A26\  = \ {{Extract[n2, 1], Extract[n2, 2], 
+          Extract[n2, 3]}, {Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}}\), "\[IndentingNewLine]", 
+    \(B26 = {FuncFi2, FuncFi6, FuncFi3}\), "\[IndentingNewLine]", 
+    \(Solution26\  = \ LinearSolve[A26, B26]\), "\[IndentingNewLine]", 
+    \(Print["\<n7.Solution26 = \>", 
+      n7 . Solution26]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi7 = \>", FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<(n7.Solution26 <= FuncFi7) = \>", 
+      n7 . Solution26\  <= \ FuncFi7]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 2-6 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-4 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A142\  = \ {{Extract[n1, 1], Extract[n1, 2], 
+          Extract[n1, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}}\), "\[IndentingNewLine]", 
+    \(B142 = {FuncFi1, FuncFi4, FuncFi3}\), "\[IndentingNewLine]", 
+    \(Solution142\  = \ LinearSolve[A142, B142]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution14 = \>", 
+      n6 . Solution142]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution14 <= FuncFi6) = \>", 
+      n6 . Solution142\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 1-4 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 4-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A47\  = \ {{Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n3, 1], Extract[n3, 2], 
+          Extract[n3, 3]}}\), "\[IndentingNewLine]", 
+    \(B47 = {FuncFi4, FuncFi7, FuncFi3}\), "\[IndentingNewLine]", 
+    \(Solution47\  = \ LinearSolve[A47, B47]\), "\[IndentingNewLine]", 
+    \(Print["\<n6.Solution47 = \>", 
+      n6 . Solution47]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi6 = \>", FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<(n6.Solution47 <= FuncFi6) = \>", 
+      n6 . Solution47\  <= \ FuncFi6]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 4-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 6-7 :\>"]\), "\
+\[IndentingNewLine]", 
+    \(A67\  = \ {{Extract[n6, 1], Extract[n6, 2], 
+          Extract[n6, 3]}, {Extract[n7, 1], Extract[n7, 2], 
+          Extract[n7, 3]}, {Extract[n4, 1], Extract[n4, 2], 
+          Extract[n4, 3]}}\), "\[IndentingNewLine]", 
+    \(B67 = {FuncFi6, FuncFi7, FuncFi4}\), "\[IndentingNewLine]", 
+    \(Solution67\  = \ LinearSolve[A67, B67]\), "\[IndentingNewLine]", 
+    \(Print["\<n2.Solution67 = \>", 
+      n2 . Solution67]\), "\[IndentingNewLine]", 
+    \(Print["\<FuncFi2 = \>", FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<(n2.Solution67 <= FuncFi2) = \>", 
+      n2 . Solution67\  <= \ FuncFi2]\), "\[IndentingNewLine]", 
+    \(Print["\<\:0441\:0432\:044f\:0437\:044c 6-7 \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0430\>"]\), "\[IndentingNewLine]", 
+    \(Print["\<\>"]\)}], "Input"],
+
+Cell[BoxData[
+    \(0.1`\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, 2.5`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.5`\), 2.5`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.5`\), \(-2.5`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, \(-2.5`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \(Max[n . {\(-2.5`\), \(-2.5`\), 2.5`}, n . {\(-2.5`\), 2.5`, 2.5`}, 
+      n . {0, 0, 0}, n . {2.5`, \(-2.5`\), 2.5`}, 
+      n . {2.5`, 2.5`, 2.5`}]\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.1`\), \(-1\), 0}\)], "Output"],
+
+Cell[BoxData[
+    \({0.1`, 1, 0}\)], "Output"],
+
+Cell[BoxData[
+    \(Max[0.1`\ n . {\(-0.1`\), \(-1\), 0}, 
+      0.1`\ n . {0.1`, 1, 0}]\)], "Output"],
+
+Cell[BoxData[
+    \({\(-1\), 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({1, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \(Max[0.1`\ n . {\(-1\), 0, 0}, 0.1`\ n . {1, 0, 0}]\)], "Output"],
+
+Cell[BoxData[
+    \(\(-Max[0.1`\ n . {\(-1\), 0, 0}, 0.1`\ n . {1, 0, 0}]\) + 
+      Max[0.1`\ n . {\(-0.1`\), \(-1\), 0}, 0.1`\ n . {0.1`, 1, 0}] + 
+      Max[n . {\(-2.5`\), \(-2.5`\), 2.5`}, n . {\(-2.5`\), 2.5`, 2.5`}, 
+        n . {0, 0, 0}, n . {2.5`, \(-2.5`\), 2.5`}, 
+        n . {2.5`, 2.5`, 2.5`}]\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0.707106781186547`, \(-0.707106781186547`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.707106781186547`\), 0, \(-0.707106781186547`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 1}\)], "Output"],
+
+Cell[BoxData[
+    \({0.707106781186547`, 0, \(-0.707106781186547`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0, \(-0.707106781186547`\), \(-0.707106781186547`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.671156`\), 0.0671156`, \(-0.738272`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0.671156`, \(-0.0671156`\), \(-0.738272`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, \(-1\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0.1`, 1, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({1, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \("\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0441\:043a\:0430\
+\:043b\:044f\:0440\:043d\:043e\:0433\:043e \:043f\:0440\:043e\:0438\:0437\
+\:0432\:0435\:0434\:0435\:043d\:0438\:044f \:043d\:043e\:0440\:043c\:0430\
+\:043b\:0435\:0439 n1...n8 \:0441 \:043d\:0430\:043f\:0440\:0430\:0432\:043b\
+\:044f\:044e\:0449\:0438\:043c \:0432\:0435\:043a\:0442\:043e\:0440\:043e\
+\:043c qidv :"\)], "Print"],
+
+Cell[BoxData[
+    \(0.`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.707106781186547`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0.707106781186547`\)], "Output"],
+
+Cell[BoxData[
+    \(0.`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.671156`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.671156`\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \("\:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f \:0444-\:0446\:0438\
+\:0438 Fi \:0434\:043b\:044f \:043d\:043e\:0440\:043c\:0430\:043b\:0435\:0439 \
+n1...n8 :"\)], "Print"],
+
+Cell[BoxData[
+    \(0.07071067811865471`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.06363961030678925`\)\)], "Output"],
+
+Cell[BoxData[
+    \(2.5`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.06363961030678925`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.07071067811865471`\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.0671156`\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-0.0671156`\)\)], "Output"],
+
+Cell[BoxData[
+    \(0.`\)], "Output"],
+
+Cell[BoxData[
+    \(1\/1000000000\)], "Output"],
+
+Cell[BoxData[
+    \("\:043f\:0440\:043e\:0432\:0435\:0440\:043a\:0430 \:043f\:043e\:0434\
+\:043e\:0437\:0440\:0438\:0442\:0435\:043b\:044c\:043d\:044b\:0445 \:0441\
+\:0432\:044f\:0437\:0435\:0439"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-6 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {\(-0.671156`\), 
+        0.0671156`, \(-0.738272`\)}, {0, 0, \(-1\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), 0.`}\)], "Output"],
+
+Cell[BoxData[
+    \({0.11`, 0.1`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution16 = "\[InvisibleSpace]0.`\),
+      SequenceForm[ "n3.Solution16 = ", 0.0],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution16 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution16 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-6 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-3 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {0, 0, 
+        1}, {\(-0.671156`\), 0.0671156`, \(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, 2.5`, \(-0.0671156`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.3900014899665654`\), 2.6`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n4.Solution13 = \
+"\[InvisibleSpace]\(-3.4577532135676767`\)\),
+      SequenceForm[ "n4.Solution13 = ", -3.4577532135676767],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi4 = \
+"\[InvisibleSpace]\(-0.06363961030678925`\)\),
+      SequenceForm[ "FuncFi4 = ", -.063639610306789246],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n4.Solution13 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n4.Solution13 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-3 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-4 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}, {0, 0, 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.06363961030678925`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({2.41`, 2.6`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n7.Solution14 = \
+"\[InvisibleSpace]\(-0.40269460000000024`\)\),
+      SequenceForm[ "n7.Solution14 = ", -.40269460000000024],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi7 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi7 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n7.Solution14 <= FuncFi7) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n7.Solution14 <= FuncFi7) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-4 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 
+        0.707106781186547`, \(-0.707106781186547`\)}, {0.671156`, \
+\(-0.0671156`\), \(-0.738272`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), \(-0.06363961030678925`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.09000000000000008`\), 
+      0.09999999999999995`, \(-6.461680692090411`*^-17\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n8.Solution17 = \
+"\[InvisibleSpace]6.461680692090411`*^-17\),
+      SequenceForm[ "n8.Solution17 = ", .6461680692090411*^-16],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi8 = "\[InvisibleSpace]0.`\),
+      SequenceForm[ "FuncFi8 = ", 0.0],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n8.Solution17 <= FuncFi8) = "\[InvisibleSpace]False\
+\),
+      SequenceForm[ "(n8.Solution17 <= FuncFi8) = ", False],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(Abs[n8.Solution17-FuncFi8]<\[Epsilon]) = "\
+\[InvisibleSpace]True\),
+      SequenceForm[ "(Abs[n8.Solution17-FuncFi8]<\[Epsilon]) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-8 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {0, 
+        0, \(-1\)}, {0.671156`, \(-0.0671156`\), \(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, 0.`, \(-0.0671156`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.09`\), 0.1`, 0.`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution18 = "\[InvisibleSpace]0.0671156`\),
+      SequenceForm[ "n6.Solution18 = ", .067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution18 <= FuncFi6) = "\[InvisibleSpace]False\
+\),
+      SequenceForm[ "(n6.Solution18 <= FuncFi6) = ", False],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-8 \
+\:043d\:0435\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \({0.`, 1.476544`, \(-1.`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("(\[Lambda]1,\[Lambda]2,\[Lambda]3) = "\
+\[InvisibleSpace]{0.`, 1.476544`, \(-1.`\)}\),
+      SequenceForm[ 
+      "(\[Lambda]1,\[Lambda]2,\[Lambda]3) = ", {0.0, 
+        1.4765440000000001, -1.0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0443\:0434\:0430\:043b\:044f\:0435\:043c \:0443\:0437\:0435\:043b 8"\
+\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-3 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.707106781186547`\), 0, \(-0.707106781186547`\)}, {0, 0, 
+        1}, {0, \(-0.707106781186547`\), \(-0.707106781186547`\)}}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), 2.5`, 0.07071067811865471`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.41`\), \(-2.6`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution23 = \
+"\[InvisibleSpace]\(-0.40269460000000024`\)\),
+      SequenceForm[ "n6.Solution23 = ", -.40269460000000024],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution23 <= FuncFi6) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n6.Solution23 <= FuncFi6) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-3 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-5 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0, 
+        1}, {0, \(-0.707106781186547`\), \(-0.707106781186547`\)}, \
+{\(-0.707106781186547`\), 0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, 0.07071067811865471`, \(-0.06363961030678925`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.41`\), \(-2.6`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n7.Solution35 = "\[InvisibleSpace]\(-3.2886654`\)\),
+      SequenceForm[ "n7.Solution35 = ", -3.2886654000000002],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi7 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi7 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n7.Solution35 <= FuncFi7) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n7.Solution35 <= FuncFi7) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-5 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0, 
+        1}, {0.671156`, \(-0.0671156`\), \(-0.738272`\)}, {0, \
+\(-0.707106781186547`\), \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, \(-0.0671156`\), 0.07071067811865471`}\)], "Output"],
+
+Cell[BoxData[
+    \({2.3900014899665654`, \(-2.6`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n4.Solution37 = \
+"\[InvisibleSpace]\(-0.07778069236505813`\)\),
+      SequenceForm[ "n4.Solution37 = ", -.077780692365058135],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi4 = \
+"\[InvisibleSpace]\(-0.06363961030678925`\)\),
+      SequenceForm[ "FuncFi4 = ", -.063639610306789246],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n4.Solution37 <= FuncFi4) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n4.Solution37 <= FuncFi4) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-4 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0, 1}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}, {0.671156`, \(-0.0671156`\), \
+\(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, \(-0.06363961030678925`\), \(-0.0671156`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({2.41`, \(-2.400014899665654`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n1.Solution34 = \
+"\[InvisibleSpace]\(-3.464833763468702`\)\),
+      SequenceForm[ "n1.Solution34 = ", -3.4648337634687021],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi1 = "\[InvisibleSpace]0.07071067811865471`\),
+      SequenceForm[ "FuncFi1 = ", .07071067811865471],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n1.Solution34 <= FuncFi1) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n1.Solution34 <= FuncFi1) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-4 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-6 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0, 1}, {\(-0.671156`\), 0.0671156`, \(-0.738272`\)}, {0, 
+        0.707106781186547`, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({2.5`, \(-0.0671156`\), 0.07071067811865471`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.3900014899665654`\), 2.6`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n2.Solution36 = \
+"\[InvisibleSpace]\(-0.07778069236505813`\)\),
+      SequenceForm[ "n2.Solution36 = ", -.077780692365058135],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi2 = \
+"\[InvisibleSpace]\(-0.06363961030678925`\)\),
+      SequenceForm[ "FuncFi2 = ", -.063639610306789246],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n2.Solution36 <= FuncFi2) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n2.Solution36 <= FuncFi2) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 3-6 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 5-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, \(-0.707106781186547`\), \(-0.707106781186547`\)}, {0.671156`, \
+\(-0.0671156`\), \(-0.738272`\)}, {0, 
+        0.707106781186547`, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), 
+      0.07071067811865471`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.2100000595986626`\), 0.`, \(-0.1`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution57 = "\[InvisibleSpace]\(-0.1`\)\),
+      SequenceForm[ "n3.Solution57 = ", -.10000000000000001],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution57 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution57 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 5-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-5 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}, {0, \(-0.707106781186547`\), \
+\(-0.707106781186547`\)}, {0, 
+        0.707106781186547`, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), 0.07071067811865471`, 
+      0.07071067811865471`}\)], "Output"],
+
+Cell[BoxData[
+    \({0.19000000000000003`, 0.`, \(-0.1`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution25 = "\[InvisibleSpace]\(-0.1`\)\),
+      SequenceForm[ "n3.Solution25 = ", -.10000000000000001],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution25 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution25 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-5 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-5 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 
+        0.707106781186547`, \(-0.707106781186547`\)}, {0, \
+\(-0.707106781186547`\), \(-0.707106781186547`\)}, {0.671156`, \
+\(-0.0671156`\), \(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, 
+      0.07071067811865471`, \(-0.0671156`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.2100000595986626`\), 0.`, \(-0.1`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n2.Solution15 = \
+"\[InvisibleSpace]0.21920314431044807`\),
+      SequenceForm[ "n2.Solution15 = ", .21920314431044807],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi2 = \
+"\[InvisibleSpace]\(-0.06363961030678925`\)\),
+      SequenceForm[ "FuncFi2 = ", -.063639610306789246],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n2.Solution15 <= FuncFi2) = "\[InvisibleSpace]False\
+\),
+      SequenceForm[ "(n2.Solution15 <= FuncFi2) = ", False],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-5 \
+\:043d\:0435\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \({1.000000297993313`, 
+      1.100000297993313`, \(-1.0535654619589887`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("(\[Lambda]1,\[Lambda]2,\[Lambda]3) = "\
+\[InvisibleSpace]{1.000000297993313`, 
+          1.100000297993313`, \(-1.0535654619589887`\)}\),
+      SequenceForm[ 
+      "(\[Lambda]1,\[Lambda]2,\[Lambda]3) = ", {1.0000002979933129, 
+        1.100000297993313, -1.0535654619589887}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-5 \
+\:0437\:0430\:043c\:0435\:043d\:044f\:0435\:043c \:043d\:0430 2-7"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-2 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 
+        0.707106781186547`, \(-0.707106781186547`\)}, \
+{\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}, {0.671156`, \(-0.0671156`\), \
+\(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.06363961030678925`\), \(-0.0671156`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({0.008181840346604085`, 0.18181815965339596`, 
+      0.08181815965339594`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution12 = \
+"\[InvisibleSpace]\(-0.05369251272726388`\)\),
+      SequenceForm[ "n6.Solution12 = ", -.053692512727263879],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution12 <= FuncFi6) = "\[InvisibleSpace]False\
+\),
+      SequenceForm[ "(n6.Solution12 <= FuncFi6) = ", False],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-2 \
+\:043d\:0435\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \({0.09491581747977466`, 0.9491581747977467`, 
+      2.7090293854006385`*^-7}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("(\[Lambda]1,\[Lambda]2,\[Lambda]3) = "\
+\[InvisibleSpace]{0.09491581747977466`, 0.9491581747977467`, 
+          2.7090293854006385`*^-7}\),
+      SequenceForm[ 
+      "(\[Lambda]1,\[Lambda]2,\[Lambda]3) = ", {.094915817479774664, \
+.94915817479774667, .27090293854006385*^-6}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-2 \
+\:0437\:0430\:043c\:0435\:043d\:044f\:0435\:043c \:043d\:0430 6-7"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 
+        0.707106781186547`, \(-0.707106781186547`\)}, {0.671156`, \
+\(-0.0671156`\), \(-0.738272`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), \(-0.06363961030678925`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.09000000000000008`\), 
+      0.09999999999999995`, \(-6.461680692090411`*^-17\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution17 = \
+"\[InvisibleSpace]0.0671156000000001`\),
+      SequenceForm[ "n6.Solution17 = ", .067115600000000095],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution17 <= FuncFi6) = "\[InvisibleSpace]False\
+\),
+      SequenceForm[ "(n6.Solution17 <= FuncFi6) = ", False],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-7 \
+\:043d\:0435\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \({1.044071163858059`, 
+      9.999973180681751`, \(-10.440711638580593`\)}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("(\[Lambda]1,\[Lambda]2,\[Lambda]3) = "\
+\[InvisibleSpace]{1.044071163858059`, 
+          9.999973180681751`, \(-10.440711638580593`\)}\),
+      SequenceForm[ 
+      "(\[Lambda]1,\[Lambda]2,\[Lambda]3) = ", {1.0440711638580591, 
+        9.9999731806817511, -10.440711638580593}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-7 \
+\:0437\:0430\:043c\:0435\:043d\:044f\:0435\:043c \:043d\:0430 4-6"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-6 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {\(-0.671156`\), 
+        0.0671156`, \(-0.738272`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), \(-0.06363961030678925`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({0.009999970200677544`, 0.19999997020067758`, 
+      0.09999997020067757`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution16 = \
+"\[InvisibleSpace]0.09999997020067757`\),
+      SequenceForm[ "n3.Solution16 = ", .099999970200677565],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution16 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution16 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-6 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-5 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}, {0, \(-0.707106781186547`\), \
+\(-0.707106781186547`\)}, {0.671156`, \(-0.0671156`\), \(-0.738272`\)}}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), 
+      0.07071067811865471`, \(-0.0671156`\)}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.009999970200677544`\), \(-0.19999997020067758`\), 
+      0.09999997020067757`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution25 = \
+"\[InvisibleSpace]0.09999997020067757`\),
+      SequenceForm[ "n3.Solution25 = ", .099999970200677565],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution25 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution25 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-5 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 5-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, \(-0.707106781186547`\), \(-0.707106781186547`\)}, {0.671156`, \
+\(-0.0671156`\), \(-0.738272`\)}, {\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.0671156`\), \(-0.06363961030678925`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.009999970200677544`\), \(-0.19999997020067758`\), 
+      0.09999997020067757`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n3.Solution57 = \
+"\[InvisibleSpace]0.09999997020067757`\),
+      SequenceForm[ "n3.Solution57 = ", .099999970200677565],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi3 = "\[InvisibleSpace]2.5`\),
+      SequenceForm[ "FuncFi3 = ", 2.5],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n3.Solution57 <= FuncFi3) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n3.Solution57 <= FuncFi3) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 5-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}, {0.671156`, \(-0.0671156`\), \
+\(-0.738272`\)}, {\(-0.671156`\), 0.0671156`, \(-0.738272`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), \(-0.0671156`\), \(-0.0671156`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({\(-0.0009090416540245046`\), \(-0.00909041654024548`\), 
+      0.09090904165402452`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n5.Solution27 = \
+"\[InvisibleSpace]\(-0.05785450464531308`\)\),
+      SequenceForm[ "n5.Solution27 = ", -.057854504645313082],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi5 = "\[InvisibleSpace]0.07071067811865471`\),
+      SequenceForm[ "FuncFi5 = ", .07071067811865471],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n5.Solution27 <= FuncFi5) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n5.Solution27 <= FuncFi5) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-6 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.707106781186547`\), 
+        0, \(-0.707106781186547`\)}, {\(-0.671156`\), 
+        0.0671156`, \(-0.738272`\)}, {0, 0, 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), \(-0.0671156`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-2.41`\), 2.400014899665654`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n7.Solution26 = \
+"\[InvisibleSpace]\(-3.6242444000000003`\)\),
+      SequenceForm[ "n7.Solution26 = ", -3.6242444000000003],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi7 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi7 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n7.Solution26 <= FuncFi7) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n7.Solution26 <= FuncFi7) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 2-6 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-4 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0, 0.707106781186547`, \(-0.707106781186547`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}, {0, 0, 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({0.07071067811865471`, \(-0.06363961030678925`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({2.41`, 2.6`, 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution14 = "\[InvisibleSpace]\(-3.2886654`\)\),
+      SequenceForm[ "n6.Solution14 = ", -3.2886654000000002],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution14 <= FuncFi6) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n6.Solution14 <= FuncFi6) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 1-4 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 4-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{0.707106781186547`, 
+        0, \(-0.707106781186547`\)}, {0.671156`, \(-0.0671156`\), \
+\(-0.738272`\)}, {0, 0, 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.06363961030678925`\), \(-0.0671156`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    \({2.41`, \(-2.400014899665654`\), 2.5`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n6.Solution47 = \
+"\[InvisibleSpace]\(-3.6242444000000003`\)\),
+      SequenceForm[ "n6.Solution47 = ", -3.6242444000000003],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi6 = "\[InvisibleSpace]\(-0.0671156`\)\),
+      SequenceForm[ "FuncFi6 = ", -.067115599999999997],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n6.Solution47 <= FuncFi6) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n6.Solution47 <= FuncFi6) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 4-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 6-7 :"\)], "Print"],
+
+Cell[BoxData[
+    \({{\(-0.671156`\), 
+        0.0671156`, \(-0.738272`\)}, {0.671156`, \(-0.0671156`\), \
+\(-0.738272`\)}, {0.707106781186547`, 
+        0, \(-0.707106781186547`\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-0.0671156`\), \(-0.0671156`\), \(-0.06363961030678925`\)}\)], \
+"Output"],
+
+Cell[BoxData[
+    \({0.0009090416540245046`, 0.009090416540245123`, 
+      0.09090904165402452`}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\("n2.Solution67 = \
+"\[InvisibleSpace]\(-0.06492518934267277`\)\),
+      SequenceForm[ "n2.Solution67 = ", -.064925189342672773],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("FuncFi2 = \
+"\[InvisibleSpace]\(-0.06363961030678925`\)\),
+      SequenceForm[ "FuncFi2 = ", -.063639610306789246],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(n2.Solution67 <= FuncFi2) = \
+"\[InvisibleSpace]True\),
+      SequenceForm[ "(n2.Solution67 <= FuncFi2) = ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("\:0441\:0432\:044f\:0437\:044c 6-7 \
+\:0432\:044b\:043f\:0443\:043a\:043b\:0430"\)], "Print"],
+
+Cell[BoxData[
+    \(\*"\<\"\"\>"\)], "Print"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 949}},
+WindowSize->{1165, 792},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 78, 1, 33, "Input"],
+
+Cell[CellGroupData[{
+Cell[1857, 56, 27101, 479, 6510, "Input"],
+Cell[28961, 537, 38, 1, 29, "Output"],
+Cell[29002, 540, 43, 1, 29, "Output"],
+Cell[29048, 543, 52, 1, 29, "Output"],
+Cell[29103, 546, 57, 1, 29, "Output"],
+Cell[29163, 549, 62, 1, 29, "Output"],
+Cell[29228, 552, 57, 1, 29, "Output"],
+Cell[29288, 555, 182, 3, 29, "Output"],
+Cell[29473, 560, 56, 1, 29, "Output"],
+Cell[29532, 563, 46, 1, 29, "Output"],
+Cell[29581, 566, 102, 2, 29, "Output"],
+Cell[29686, 570, 48, 1, 29, "Output"],
+Cell[29737, 573, 43, 1, 29, "Output"],
+Cell[29783, 576, 84, 1, 29, "Output"],
+Cell[29870, 579, 322, 5, 48, "Output"],
+Cell[30195, 586, 82, 1, 29, "Output"],
+Cell[30280, 589, 87, 1, 29, "Output"],
+Cell[30370, 592, 43, 1, 29, "Output"],
+Cell[30416, 595, 82, 1, 29, "Output"],
+Cell[30501, 598, 87, 1, 29, "Output"],
+Cell[30591, 601, 78, 1, 29, "Output"],
+Cell[30672, 604, 78, 1, 29, "Output"],
+Cell[30753, 607, 48, 1, 29, "Output"],
+Cell[30804, 610, 46, 1, 29, "Output"],
+Cell[30853, 613, 43, 1, 29, "Output"],
+Cell[30899, 616, 420, 6, 25, "Print"],
+Cell[31322, 624, 37, 1, 29, "Output"],
+Cell[31362, 627, 57, 1, 29, "Output"],
+Cell[31422, 630, 35, 1, 29, "Output"],
+Cell[31460, 633, 52, 1, 29, "Output"],
+Cell[31515, 636, 37, 1, 29, "Output"],
+Cell[31555, 639, 48, 1, 29, "Output"],
+Cell[31606, 642, 43, 1, 29, "Output"],
+Cell[31652, 645, 35, 1, 29, "Output"],
+Cell[31690, 648, 194, 3, 25, "Print"],
+Cell[31887, 653, 54, 1, 29, "Output"],
+Cell[31944, 656, 59, 1, 29, "Output"],
+Cell[32006, 659, 38, 1, 29, "Output"],
+Cell[32047, 662, 59, 1, 29, "Output"],
+Cell[32109, 665, 54, 1, 29, "Output"],
+Cell[32166, 668, 49, 1, 29, "Output"],
+Cell[32218, 671, 49, 1, 29, "Output"],
+Cell[32270, 674, 37, 1, 29, "Output"],
+Cell[32310, 677, 47, 1, 42, "Output"],
+Cell[32360, 680, 209, 3, 25, "Print"],
+Cell[32572, 685, 45, 1, 25, "Print"],
+Cell[32620, 688, 71, 1, 25, "Print"],
+Cell[32694, 691, 155, 2, 29, "Output"],
+Cell[32852, 695, 78, 1, 29, "Output"],
+Cell[32933, 698, 52, 1, 29, "Output"],
+Cell[32988, 701, 159, 3, 25, "Print"],
+Cell[33150, 706, 148, 3, 25, "Print"],
+Cell[33301, 711, 189, 4, 25, "Print"],
+Cell[33493, 717, 114, 2, 25, "Print"],
+Cell[33610, 721, 45, 1, 25, "Print"],
+Cell[33658, 724, 71, 1, 25, "Print"],
+Cell[33732, 727, 150, 2, 29, "Output"],
+Cell[33885, 731, 79, 1, 29, "Output"],
+Cell[33967, 734, 72, 1, 29, "Output"],
+Cell[34042, 737, 198, 4, 25, "Print"],
+Cell[34243, 743, 188, 4, 25, "Print"],
+Cell[34434, 749, 189, 4, 25, "Print"],
+Cell[34626, 755, 114, 2, 25, "Print"],
+Cell[34743, 759, 45, 1, 25, "Print"],
+Cell[34791, 762, 71, 1, 25, "Print"],
+Cell[34865, 765, 154, 2, 29, "Output"],
+Cell[35022, 769, 89, 1, 29, "Output"],
+Cell[35114, 772, 53, 1, 29, "Output"],
+Cell[35170, 775, 199, 4, 25, "Print"],
+Cell[35372, 781, 176, 3, 25, "Print"],
+Cell[35551, 786, 189, 4, 25, "Print"],
+Cell[35743, 792, 114, 2, 25, "Print"],
+Cell[35860, 796, 45, 1, 25, "Print"],
+Cell[35908, 799, 71, 1, 25, "Print"],
+Cell[35982, 802, 200, 4, 29, "Output"],
+Cell[36185, 808, 102, 2, 29, "Output"],
+Cell[36290, 812, 120, 2, 29, "Output"],
+Cell[36413, 816, 200, 4, 25, "Print"],
+Cell[36616, 822, 147, 3, 25, "Print"],
+Cell[36766, 827, 191, 4, 25, "Print"],
+Cell[36960, 833, 215, 4, 25, "Print"],
+Cell[37178, 839, 114, 2, 25, "Print"],
+Cell[37295, 843, 45, 1, 25, "Print"],
+Cell[37343, 846, 71, 1, 25, "Print"],
+Cell[37417, 849, 155, 2, 29, "Output"],
+Cell[37575, 853, 78, 1, 29, "Output"],
+Cell[37656, 856, 57, 1, 29, "Output"],
+Cell[37716, 859, 182, 3, 25, "Print"],
+Cell[37901, 864, 176, 3, 25, "Print"],
+Cell[38080, 869, 191, 4, 25, "Print"],
+Cell[38274, 875, 126, 2, 25, "Print"],
+Cell[38403, 879, 60, 1, 29, "Output"],
+Cell[38466, 882, 270, 6, 25, "Print"],
+Cell[38739, 890, 106, 2, 25, "Print"],
+Cell[38848, 894, 45, 1, 25, "Print"],
+Cell[38896, 897, 71, 1, 25, "Print"],
+Cell[38970, 900, 166, 3, 29, "Output"],
+Cell[39139, 905, 89, 1, 29, "Output"],
+Cell[39231, 908, 63, 1, 29, "Output"],
+Cell[39297, 911, 199, 4, 25, "Print"],
+Cell[39499, 917, 176, 3, 25, "Print"],
+Cell[39678, 922, 189, 4, 25, "Print"],
+Cell[39870, 928, 114, 2, 25, "Print"],
+Cell[39987, 932, 45, 1, 25, "Print"],
+Cell[40035, 935, 71, 1, 25, "Print"],
+Cell[40109, 938, 166, 3, 29, "Output"],
+Cell[40278, 943, 89, 1, 29, "Output"],
+Cell[40370, 946, 63, 1, 29, "Output"],
+Cell[40436, 949, 187, 3, 25, "Print"],
+Cell[40626, 954, 176, 3, 25, "Print"],
+Cell[40805, 959, 189, 4, 25, "Print"],
+Cell[40997, 965, 114, 2, 25, "Print"],
+Cell[41114, 969, 45, 1, 25, "Print"],
+Cell[41162, 972, 71, 1, 25, "Print"],
+Cell[41236, 975, 157, 3, 29, "Output"],
+Cell[41396, 980, 79, 1, 29, "Output"],
+Cell[41478, 983, 72, 1, 29, "Output"],
+Cell[41553, 986, 200, 4, 25, "Print"],
+Cell[41756, 992, 188, 4, 25, "Print"],
+Cell[41947, 998, 189, 4, 25, "Print"],
+Cell[42139, 1004, 114, 2, 25, "Print"],
+Cell[42256, 1008, 45, 1, 25, "Print"],
+Cell[42304, 1011, 71, 1, 25, "Print"],
+Cell[42378, 1014, 152, 3, 29, "Output"],
+Cell[42533, 1019, 84, 1, 29, "Output"],
+Cell[42620, 1022, 72, 1, 29, "Output"],
+Cell[42695, 1025, 197, 4, 25, "Print"],
+Cell[42895, 1031, 179, 3, 25, "Print"],
+Cell[43077, 1036, 189, 4, 25, "Print"],
+Cell[43269, 1042, 114, 2, 25, "Print"],
+Cell[43386, 1046, 45, 1, 25, "Print"],
+Cell[43434, 1049, 71, 1, 25, "Print"],
+Cell[43508, 1052, 150, 2, 29, "Output"],
+Cell[43661, 1056, 79, 1, 29, "Output"],
+Cell[43743, 1059, 72, 1, 29, "Output"],
+Cell[43818, 1062, 200, 4, 25, "Print"],
+Cell[44021, 1068, 188, 4, 25, "Print"],
+Cell[44212, 1074, 189, 4, 25, "Print"],
+Cell[44404, 1080, 114, 2, 25, "Print"],
+Cell[44521, 1084, 45, 1, 25, "Print"],
+Cell[44569, 1087, 71, 1, 25, "Print"],
+Cell[44643, 1090, 196, 3, 29, "Output"],
+Cell[44842, 1095, 102, 2, 29, "Output"],
+Cell[44947, 1099, 76, 1, 29, "Output"],
+Cell[45026, 1102, 181, 3, 25, "Print"],
+Cell[45210, 1107, 148, 3, 25, "Print"],
+Cell[45361, 1112, 189, 4, 25, "Print"],
+Cell[45553, 1118, 114, 2, 25, "Print"],
+Cell[45670, 1122, 45, 1, 25, "Print"],
+Cell[45718, 1125, 71, 1, 25, "Print"],
+Cell[45792, 1128, 214, 4, 29, "Output"],
+Cell[46009, 1134, 112, 2, 29, "Output"],
+Cell[46124, 1138, 72, 1, 29, "Output"],
+Cell[46199, 1141, 181, 3, 25, "Print"],
+Cell[46383, 1146, 148, 3, 25, "Print"],
+Cell[46534, 1151, 189, 4, 25, "Print"],
+Cell[46726, 1157, 114, 2, 25, "Print"],
+Cell[46843, 1161, 45, 1, 25, "Print"],
+Cell[46891, 1164, 71, 1, 25, "Print"],
+Cell[46965, 1167, 198, 4, 29, "Output"],
+Cell[47166, 1173, 102, 2, 29, "Output"],
+Cell[47271, 1177, 76, 1, 29, "Output"],
+Cell[47350, 1180, 193, 4, 25, "Print"],
+Cell[47546, 1186, 188, 4, 25, "Print"],
+Cell[47737, 1192, 191, 4, 25, "Print"],
+Cell[47931, 1198, 126, 2, 25, "Print"],
+Cell[48060, 1202, 107, 2, 29, "Output"],
+Cell[48170, 1206, 350, 7, 25, "Print"],
+Cell[48523, 1215, 137, 2, 25, "Print"],
+Cell[48663, 1219, 45, 1, 25, "Print"],
+Cell[48711, 1222, 71, 1, 25, "Print"],
+Cell[48785, 1225, 207, 5, 29, "Output"],
+Cell[48995, 1232, 102, 2, 29, "Output"],
+Cell[49100, 1236, 108, 2, 29, "Output"],
+Cell[49211, 1240, 200, 4, 25, "Print"],
+Cell[49414, 1246, 176, 3, 25, "Print"],
+Cell[49593, 1251, 191, 4, 25, "Print"],
+Cell[49787, 1257, 126, 2, 25, "Print"],
+Cell[49916, 1261, 109, 2, 29, "Output"],
+Cell[50028, 1265, 350, 7, 25, "Print"],
+Cell[50381, 1274, 137, 2, 25, "Print"],
+Cell[50521, 1278, 45, 1, 25, "Print"],
+Cell[50569, 1281, 71, 1, 25, "Print"],
+Cell[50643, 1284, 200, 4, 29, "Output"],
+Cell[50846, 1290, 102, 2, 29, "Output"],
+Cell[50951, 1294, 120, 2, 29, "Output"],
+Cell[51074, 1298, 193, 4, 25, "Print"],
+Cell[51270, 1304, 176, 3, 25, "Print"],
+Cell[51449, 1309, 191, 4, 25, "Print"],
+Cell[51643, 1315, 126, 2, 25, "Print"],
+Cell[51772, 1319, 107, 2, 29, "Output"],
+Cell[51882, 1323, 351, 7, 25, "Print"],
+Cell[52236, 1332, 137, 2, 25, "Print"],
+Cell[52376, 1336, 45, 1, 25, "Print"],
+Cell[52424, 1339, 71, 1, 25, "Print"],
+Cell[52498, 1342, 198, 3, 29, "Output"],
+Cell[52699, 1347, 102, 2, 29, "Output"],
+Cell[52804, 1351, 108, 2, 29, "Output"],
+Cell[52915, 1355, 194, 4, 25, "Print"],
+Cell[53112, 1361, 148, 3, 25, "Print"],
+Cell[53263, 1366, 189, 4, 25, "Print"],
+Cell[53455, 1372, 114, 2, 25, "Print"],
+Cell[53572, 1376, 45, 1, 25, "Print"],
+Cell[53620, 1379, 71, 1, 25, "Print"],
+Cell[53694, 1382, 203, 4, 29, "Output"],
+Cell[53900, 1388, 107, 2, 29, "Output"],
+Cell[54010, 1392, 118, 2, 29, "Output"],
+Cell[54131, 1396, 194, 4, 25, "Print"],
+Cell[54328, 1402, 148, 3, 25, "Print"],
+Cell[54479, 1407, 189, 4, 25, "Print"],
+Cell[54671, 1413, 114, 2, 25, "Print"],
+Cell[54788, 1417, 45, 1, 25, "Print"],
+Cell[54836, 1420, 71, 1, 25, "Print"],
+Cell[54910, 1423, 201, 3, 29, "Output"],
+Cell[55114, 1428, 102, 2, 29, "Output"],
+Cell[55219, 1432, 118, 2, 29, "Output"],
+Cell[55340, 1436, 194, 4, 25, "Print"],
+Cell[55537, 1442, 148, 3, 25, "Print"],
+Cell[55688, 1447, 189, 4, 25, "Print"],
+Cell[55880, 1453, 114, 2, 25, "Print"],
+Cell[55997, 1457, 45, 1, 25, "Print"],
+Cell[56045, 1460, 71, 1, 25, "Print"],
+Cell[56119, 1463, 192, 3, 29, "Output"],
+Cell[56314, 1468, 97, 2, 29, "Output"],
+Cell[56414, 1472, 119, 2, 29, "Output"],
+Cell[56536, 1476, 200, 4, 25, "Print"],
+Cell[56739, 1482, 179, 3, 25, "Print"],
+Cell[56921, 1487, 189, 4, 25, "Print"],
+Cell[57113, 1493, 114, 2, 25, "Print"],
+Cell[57230, 1497, 45, 1, 25, "Print"],
+Cell[57278, 1500, 71, 1, 25, "Print"],
+Cell[57352, 1503, 164, 3, 29, "Output"],
+Cell[57519, 1508, 84, 1, 29, "Output"],
+Cell[57606, 1511, 72, 1, 29, "Output"],
+Cell[57681, 1514, 198, 4, 25, "Print"],
+Cell[57882, 1520, 176, 3, 25, "Print"],
+Cell[58061, 1525, 189, 4, 25, "Print"],
+Cell[58253, 1531, 114, 2, 25, "Print"],
+Cell[58370, 1535, 45, 1, 25, "Print"],
+Cell[58418, 1538, 71, 1, 25, "Print"],
+Cell[58492, 1541, 154, 2, 29, "Output"],
+Cell[58649, 1545, 89, 1, 29, "Output"],
+Cell[58741, 1548, 53, 1, 29, "Output"],
+Cell[58797, 1551, 187, 3, 25, "Print"],
+Cell[58987, 1556, 176, 3, 25, "Print"],
+Cell[59166, 1561, 189, 4, 25, "Print"],
+Cell[59358, 1567, 114, 2, 25, "Print"],
+Cell[59475, 1571, 45, 1, 25, "Print"],
+Cell[59523, 1574, 71, 1, 25, "Print"],
+Cell[59597, 1577, 152, 3, 29, "Output"],
+Cell[59752, 1582, 84, 1, 29, "Output"],
+Cell[59839, 1585, 72, 1, 29, "Output"],
+Cell[59914, 1588, 198, 4, 25, "Print"],
+Cell[60115, 1594, 176, 3, 25, "Print"],
+Cell[60294, 1599, 189, 4, 25, "Print"],
+Cell[60486, 1605, 114, 2, 25, "Print"],
+Cell[60603, 1609, 45, 1, 25, "Print"],
+Cell[60651, 1612, 71, 1, 25, "Print"],
+Cell[60725, 1615, 196, 4, 29, "Output"],
+Cell[60924, 1621, 97, 2, 29, "Output"],
+Cell[61024, 1625, 110, 2, 29, "Output"],
+Cell[61137, 1629, 200, 4, 25, "Print"],
+Cell[61340, 1635, 188, 4, 25, "Print"],
+Cell[61531, 1641, 189, 4, 25, "Print"],
+Cell[61723, 1647, 114, 2, 25, "Print"],
+Cell[61840, 1651, 45, 1, 25, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

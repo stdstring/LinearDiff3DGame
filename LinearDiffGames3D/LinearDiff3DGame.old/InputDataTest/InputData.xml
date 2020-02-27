@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InputData>
+    <MatrixA>
+        <Row>1 0 0</Row>
+        <Row>0 1 0</Row>
+        <Row>0 0 1</Row>
+    </MatrixA>
+    <MatrixB>
+        <Row>1</Row>
+        <Row>-1</Row>
+        <Row>0</Row>
+    </MatrixB>
+    <MatrixC>
+        <Row>0</Row>
+        <Row>0</Row>
+        <Row>0,123</Row>
+    </MatrixC>
+</InputData>

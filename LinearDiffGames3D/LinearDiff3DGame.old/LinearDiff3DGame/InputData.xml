@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InputData>
+  <!--
+    <MatrixA>
+        <Row>0 1 0</Row>
+        <Row>0 0 1</Row>
+        <Row>0 0 0</Row>
+    </MatrixA>
+    <MatrixB>
+        <Row>0</Row>
+        <Row>0</Row>
+        <Row>1</Row>
+    </MatrixB>
+    <MatrixC>
+        <Row>1</Row>
+        <Row>0</Row>
+        <Row>0</Row>
+    </MatrixC>
+    <FinalSet>
+        <Point3D>2 2 2</Point3D>
+        <Point3D>-2 2 2</Point3D>
+        <Point3D>2 -2 2</Point3D>
+        <Point3D>-2 -2 2</Point3D>
+        <Point3D>2 2 -2</Point3D>
+        <Point3D>-2 2 -2</Point3D>
+        <Point3D>2 -2 -2</Point3D>
+        <Point3D>-2 -2 -2</Point3D>
+    </FinalSet>
+    <FirstGamer>
+        <Mp>1</Mp>
+    </FirstGamer>
+    <SecondGamer>
+        <Mq>1</Mq>
+    </SecondGamer>
+    <DeltaT>0,1</DeltaT>
+    <MinVectorDistinguishAngle>0,01</MinVectorDistinguishAngle>
+    <Epsilon>1e-9</Epsilon>
+    -->
+  <MatrixA>
+    <Row>0 1 0</Row>
+    <Row>0 0 0</Row>
+    <Row>0 0 0</Row>
+  </MatrixA>
+  <MatrixB>
+    <Row>0</Row>
+    <Row>1</Row>
+    <Row>0</Row>
+  </MatrixB>
+  <MatrixC>
+    <Row>1</Row>
+    <Row>0</Row>
+    <Row>0</Row>
+  </MatrixC>
+  <FinalSet>
+    <Point3D>0 0 0</Point3D>
+    <Point3D>2,5 2,5 2,5</Point3D>
+    <Point3D>-2,5 2,5 2,5</Point3D>
+    <Point3D>-2,5 -2,5 2,5</Point3D>
+    <Point3D>2,5 -2,5 2,5</Point3D>
+  </FinalSet>
+  <FirstGamer>
+    <Mp>1</Mp>
+  </FirstGamer>
+  <SecondGamer>
+    <Mq>1</Mq>
+  </SecondGamer>
+  <DeltaT>0,1</DeltaT>
+  <MinVectorDistinguishAngle>0,01</MinVectorDistinguishAngle>
+  <Epsilon>1e-9</Epsilon>
+</InputData>
